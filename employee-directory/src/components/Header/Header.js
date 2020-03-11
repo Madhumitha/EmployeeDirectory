@@ -10,6 +10,10 @@ const Header = () => {
           your results
         </p>
       </header>
+
+      <section className="search">
+        <input type="text" placeholder="Search" />
+      </section>
     </>
   );
 };
