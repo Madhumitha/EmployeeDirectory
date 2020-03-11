@@ -1,0 +1,12 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  padding: 50px;
+  text-align: center;
+  background: #000033;
+  color: white;
+  font-size: 20px;
+}
