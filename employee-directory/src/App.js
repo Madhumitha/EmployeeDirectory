@@ -12,6 +12,8 @@ function App() {
   const [employees, setEmployees] = useState({});
   const [fetches, setFetch] = useState(false);
   const [searches, setSearch] = useState("");
+  const [sorts, setSort] = useState("alphabet");
+  const [carrots, setCarrot] = useState("/img/carrot.png");
 
   const fetchData = async () => {
     let url = await fetch(
@@ -33,7 +35,9 @@ function App() {
       value={{
         employeeData: [employees, setEmployees],
         fetchData: [fetches, setFetch],
-        search: [searches, setSearch]
+        search: [searches, setSearch],
+        sort: [sorts, setSort],
+        carrot: [carrots, setCarrot]
       }}
     >
       <div>
