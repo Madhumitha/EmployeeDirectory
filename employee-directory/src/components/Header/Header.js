@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 
 const Header = () => {
+  const { search } = useContext(UserContext);
+
+  let [searches, setSearch] = search;
+
+  const onHandleChange = e => {
+    setSearch((searches = e.target.value));
+  };
+
   return (
     <>
       <header>
@@ -12,7 +21,12 @@ const Header = () => {
       </header>
 
       <section className="search">
-        <input type="text" placeholder="Search" />
+        <input
+          type="text"
+          placeholder="Search"
+          value={searches}
+          onChange={onHandleChange}
+        />
       </section>
     </>
   );

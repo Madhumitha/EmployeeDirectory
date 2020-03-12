@@ -11,6 +11,7 @@ import "./App.css";
 function App() {
   const [employees, setEmployees] = useState({});
   const [fetches, setFetch] = useState(false);
+  const [searches, setSearch] = useState("");
 
   const fetchData = async () => {
     let url = await fetch(
@@ -31,7 +32,8 @@ function App() {
     <UserContext.Provider
       value={{
         employeeData: [employees, setEmployees],
-        fetchData: [fetches, setFetch]
+        fetchData: [fetches, setFetch],
+        search: [searches, setSearch]
       }}
     >
       <div>
