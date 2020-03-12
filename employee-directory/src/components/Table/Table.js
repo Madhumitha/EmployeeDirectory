@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 
 const Table = () => {
+  const { employeeData } = useContext(UserContext);
+  const { fetchData } = useContext(UserContext);
+
+  const [employees, setEmployees] = employeeData;
+  const [fetches, setFetch] = fetchData;
+
   return (
-    <table>
+    <table className="employeeTable">
       <tbody>
         <tr>
           <th>Image</th>
@@ -11,6 +18,27 @@ const Table = () => {
           <th>Email</th>
           <th>DOB</th>
         </tr>
+        {fetches === false ? (
+          <tr className="employee"></tr>
+        ) : (
+          <React.Fragment>
+            {employees.map((data, index) => (
+              <tr className="employee" key={index}>
+                <td className="employeeImg">
+                  <img src={data.picture.medium} alt="" />
+                </td>
+                <td className="employeeName">
+                  {data.name.first + " " + data.name.last}
+                </td>
+                <td className="employeePhone">{data.cell}</td>
+                <td className="employeeEmail">{data.email}</td>
+                <td className="employeeDOB">
+                  {data.dob.date.substring(0, 10)}
+                </td>
+              </tr>
+            ))}
+          </React.Fragment>
+        )}
       </tbody>
     </table>
   );

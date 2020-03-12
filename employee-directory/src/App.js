@@ -14,7 +14,7 @@ function App() {
 
   const fetchData = async () => {
     let url = await fetch(
-      "https://randomuser.me/api/?results=200&nat=us,dk,fr,gb"
+      "https://randomuser.me/api/?results=400&nat=us,dk,fr,gb"
     );
     let data = await url.json();
     console.log(data);
