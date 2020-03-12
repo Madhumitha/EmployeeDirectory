@@ -17,8 +17,8 @@ Create React App is a comfortable environment for learning React, and is the bes
 To create a project, run:
 
 ```
-npx create-react-app my-app
-cd my-app
+npx create-react-app employee-directory
+cd employee-directory
 npm start
 ```
 
